@@ -19,12 +19,14 @@ class FooterBar extends HTMLElement {
   :host {
     display: block;
     width: 100%;
+    height:10%;
     background-color: #E7AB9A;
     color: white;
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);
-    position: fixed;
+    
     bottom: 0;
     left: 0;
+    margin-top: 12px;
   }
   h2 {
     padding: 16px;
@@ -51,11 +53,14 @@ class FooterBar extends HTMLElement {
     
   }
   footer-bar {
-    position: relative;
+    position: sticky;
     bottom: 0;
+    margin-top: 12px;
+    
   }
-  footer-bar p {
+  p {
     text-align: center;
+    font-weight :bold;
   }
 
 </style>

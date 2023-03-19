@@ -12,7 +12,7 @@ class AppBar extends HTMLElement {
         this.toggleDrawer();
       });
   }
-  // method toggleDrawer() akan mengubah class dari elemen .nav-menu menjadi .show 
+  // method toggleDrawer() akan mengubah class dari elemen .nav-menu menjadi .show
   // yang akan menampilkan menu navigasi pada layar mobile. Method addEventListener()
   toggleDrawer() {
     const navMenu = this.shadowDOM.querySelector(".nav-menu");
@@ -41,6 +41,7 @@ class AppBar extends HTMLElement {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height : 9vh;
           }
           .nav-menu {
             display: flex;
@@ -55,10 +56,31 @@ class AppBar extends HTMLElement {
           .nav-menu a {
             color: white;
             text-decoration: none;
+            font-weight :bold;
+
           }
           .nav-menu a:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease-in-out;
           }
+          
+          .nav-menu a:hover::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+          }
+          
+          .nav-menu a:hover::before {
+            transform: scaleX(1);
+          }
+          
           .drawer-icon {
             display: none;
             cursor: pointer;
@@ -71,8 +93,14 @@ class AppBar extends HTMLElement {
               display: block;
             }
           }
+          .logo{
+            justify-content: start;
+            font-weight :bold;
+
+          }
           .logo img {
             height: 30px;
+
           }
 
           /* Tampilkan menu navigasi pada layar mobile */
@@ -112,10 +140,50 @@ class AppBar extends HTMLElement {
             color: white;
             background-color: rgba(0, 0, 0, 0.5);
           }
+
+          /* Media query untuk layar dengan lebar 600px atau kurang */
+@media (max-width: 600px) {
+  .drawer-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  .icon-bar:first-child {
+    margin-top: 0;
+  }
+  .drawer-icon.active .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .drawer-icon.active .icon-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .drawer-icon.active .icon-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+          
         </style>
         
         <div class="container">
-          <div class="logo">Restaurant 🥘 </div>
+          <div class="logo">RESTAURANT PADANG 🥘 </div>
           <nav>
             <ul class="nav-menu">
               <li><a href="index.html">Home</a></li>
