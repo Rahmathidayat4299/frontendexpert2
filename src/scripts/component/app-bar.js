@@ -22,11 +22,13 @@ class AppBar extends HTMLElement {
   render() {
     this.shadowDOM.innerHTML = `
         <style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
+        
+        .container * {
+          display: flex;
+          min-height: 44px;
+          min-width: 44px;
+          box-sizing: border-box;
+        }
           :host {
             display: block;
             width: 100%;
@@ -35,17 +37,22 @@ class AppBar extends HTMLElement {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           }
           h2 {
-            padding: 16px;
+            padding: 20px;
           }
+         
           .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height : 9vh;
           }
+          
+          
           .nav-menu {
             display: flex;
             list-style: none;
+            display: flex;
+            min-height: 44px;
+            min-width: 44px;
           }
           .nav-menu li {
             margin-right: 20px;
@@ -57,6 +64,8 @@ class AppBar extends HTMLElement {
             color: white;
             text-decoration: none;
             font-weight :bold;
+            min-height: 44px;
+            min-width: 44px;
 
           }
           .nav-menu a:hover {
@@ -88,6 +97,7 @@ class AppBar extends HTMLElement {
           @media screen and (max-width: 600px) {
             .nav-menu {
               display: none;
+              
             }
             .drawer-icon {
               display: block;
@@ -117,6 +127,8 @@ class AppBar extends HTMLElement {
           }
           .nav-menu.show li {
             margin-bottom: 16px;
+            min-height: 44px;
+            min-width: 44px;
           }
   
           /* Animasi ketika menu navigasi ditampilkan */
@@ -177,22 +189,19 @@ class AppBar extends HTMLElement {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+</style>
+<div class="container">
+  <div class="logo">RESTAURANT PADANG 🥘</div>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Favorite</a></li>
+      <li><a href="https://www.linkedin.com/in/rahmat-hidayat-a19419136/">About Us</a></li>
+    </ul>
+  </nav>
+  <a class="drawer-icon">&#9776;</a>
+</div>
 
-
-          
-        </style>
-        
-        <div class="container">
-          <div class="logo">RESTAURANT PADANG 🥘 </div>
-          <nav>
-            <ul class="nav-menu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">Favorite</a></li>
-              <li><a href="https://www.linkedin.com/in/rahmat-hidayat-a19419136/">About Us</a></li>
-            </ul>
-          </nav>
-          <div class="drawer-icon">&#9776;</div>
-        </div>
         
       `;
   }
