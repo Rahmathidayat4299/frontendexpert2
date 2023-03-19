@@ -7,7 +7,7 @@ const main = () => {
     restaurantElement += `
       
     <style>
-    
+   
     </style>
         <section class="box">
             <img src="${resto.pictureId}" alt="${resto.name} Image">
