@@ -11,6 +11,19 @@ class AppBar extends HTMLElement {
       .addEventListener("click", () => {
         this.toggleDrawer();
       });
+    const hamburgerButtonElement = document.querySelector("#hamburger");
+    const drawerElement = document.querySelector("#drawer-icon");
+    const mainElement = document.querySelector("main");
+
+    hamburgerButtonElement.addEventListener("click", (event) => {
+      drawerElement.classList.toggle("open");
+      event.stopPropagation();
+    });
+
+    mainElement.addEventListener("click", (event) => {
+      drawerElement.classList.remove("open");
+      event.stopPropagation();
+    });
   }
   // method toggleDrawer() akan mengubah class dari elemen .nav-menu menjadi .show
   // yang akan menampilkan menu navigasi pada layar mobile. Method addEventListener()
@@ -199,7 +212,7 @@ class AppBar extends HTMLElement {
       <li><a href="https://www.linkedin.com/in/rahmat-hidayat-a19419136/">About Us</a></li>
     </ul>
   </nav>
-  <a class="drawer-icon">&#9776;</a>
+  <a class="drawer-icon" id ="hamburger" href="#">&#9776;</a>
 </div>
 
         

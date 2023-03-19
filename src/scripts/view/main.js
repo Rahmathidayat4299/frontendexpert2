@@ -9,11 +9,11 @@ const main = () => {
     <style>
    
     </style>
-        <section class="box">
-            <img src="${resto.pictureId}" alt="${resto.name} Image">
-            <p class="info">${resto.city} <b>(${resto.rating})🌟</b></p>
-            <h3 class="title">${resto.name}</h3>
-            <p>${resto.description}</p>
+        <section tabindex="0" class="box">
+            <img tabindex="0" src="${resto.pictureId}" alt="${resto.name} Image">
+            <p tabindex="0" class="info">${resto.city} <b>(${resto.rating})🌟</b></p>
+            <h3 tabindex="0" class="title">${resto.name}</h3>
+            <p tabindex="0">${resto.description}</p>
         </section>`;
   });
 
