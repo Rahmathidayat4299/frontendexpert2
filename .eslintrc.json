@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "airbnb-base",
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "no-console": 0,
+    "quotes": 0,
+    "linebreak-style": "off",
+    "eol-last": "off",
+    "import/no-unresolved": "off",
+    "lines-between-class-members": "off",
+    "import/extensions": "off",
+    "import/no-useless-path-segments": "off",
+    "indent": "off",
+    "no-trailing-spaces": "off",
+    "object-curly-spacing": "off",
+    " operator-linebreak": "off",
+    "no-underscore-dangle": "off"
+  }
+}

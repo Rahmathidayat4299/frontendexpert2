@@ -52,4 +52,3 @@ class HeroElement extends HTMLElement {
   }
   
   customElements.define('hero-element', HeroElement);
-  

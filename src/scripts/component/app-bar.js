@@ -4,27 +4,27 @@ class AppBar extends HTMLElement {
     this.shadowDOM = this.attachShadow({ mode: "open" });
   }
 
-  connectedCallback() {
-    this.render();
-    this.shadowDOM
-      .querySelector(".drawer-icon")
-      .addEventListener("click", () => {
-        this.toggleDrawer();
-      });
-    const hamburgerButtonElement = document.querySelector("#hamburger");
-    const drawerElement = document.querySelector("#drawer-icon");
-    const mainElement = document.querySelector("main");
+  // connectedCallback() {
+  //   this.render();
+  //   this.shadowDOM
+  //     .querySelector(".drawer-icon")
+  //     .addEventListener("click", () => {
+  //       this.toggleDrawer();
+  //     });
+  //   const hamburgerButtonElement = document.querySelector("#hamburger");
+  //   const drawerElement = document.querySelector("#drawer-icon");
+  //   const mainElement = document.querySelector("main");
 
-    hamburgerButtonElement.addEventListener("click", (event) => {
-      drawerElement.classList.toggle("open");
-      event.stopPropagation();
-    });
+  //   hamburgerButtonElement.addEventListener("click", (event) => {
+  //     drawerElement.classList.toggle("open");
+  //     event.stopPropagation();
+  //   });
 
-    mainElement.addEventListener("click", (event) => {
-      drawerElement.classList.remove("open");
-      event.stopPropagation();
-    });
-  }
+  //   mainElement.addEventListener("click", (event) => {
+  //     drawerElement.classList.remove("open");
+  //     event.stopPropagation();
+  //   });
+  // }
   // method toggleDrawer() akan mengubah class dari elemen .nav-menu menjadi .show
   // yang akan menampilkan menu navigasi pada layar mobile. Method addEventListener()
   toggleDrawer() {
